@@ -14,8 +14,8 @@ function ContactItem({ icon, text, href }: ContactItemProps) {
       href={href}
       className={`flex items-center gap-2 px-4 py-1 ${href ? 'hover:scale-105' : ''} transition-transform duration-200`}
     >
-      <span className="text-blue-600 dark:text-blue-400">{icon}</span>
-      <span className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+      <span className="text-[var(--accent-cyan)]">{icon}</span>
+      <span className="text-[var(--text-secondary)] hover:text-[var(--accent-cyan)]">
         {text}
       </span>
     </Component>
@@ -25,20 +25,9 @@ function ContactItem({ icon, text, href }: ContactItemProps) {
 export function ContactInfo() {
   return (
     <div className="flex flex-col items-center gap-0">
-      <ContactItem
-        icon={<Phone className="w-5 h-5" />}
-        text="+91 8122129450"
-        href="tel:+918122129450"
-      />
-      <ContactItem
-        icon={<Mail className="w-5 h-5" />}
-        text="m.dinesh.it27@gmail.com"
-        href="mailto:m.dinesh.it27@gmail.com"
-      />
-      <ContactItem
-        icon={<MapPin className="w-5 h-5" />}
-        text="Chennai, India"
-      />
+      <ContactItem icon={<Phone className="w-5 h-5" />} text="+91 8122129450" href="tel:+918122129450" />
+      <ContactItem icon={<Mail className="w-5 h-5" />} text="balavignesh.ai@gmail.com" href="mailto:balavignesh.ai@gmail.com" />
+      <ContactItem icon={<MapPin className="w-5 h-5" />} text="Chennai, India" />
     </div>
   );
 }

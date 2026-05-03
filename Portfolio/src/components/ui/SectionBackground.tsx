@@ -2,15 +2,19 @@ import React from "react";
 
 interface SectionBackgroundProps {
   children: React.ReactNode;
-  className?: string;
 }
 
-export function SectionBackground({ children, className = "" }: SectionBackgroundProps) {
+export function SectionBackground({ children }: SectionBackgroundProps) {
   return (
-    <div
-      className={`relative py-16 bg-gradient-to-br from-gray-50 via-slate-100/80 to-blue-50/60 dark:from-black dark:via-gray-950/80 dark:to-slate-950/60 ${className}`}
-    >
-      {children}
+    <div className="relative py-20 overflow-hidden">
+      {/* Subtle gradient mesh */}
+      <div className="absolute inset-0 bg-[#000000]" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+      {/* Section divider at top */}
+      <div className="absolute top-0 left-0 right-0 section-divider" />
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   );
 }

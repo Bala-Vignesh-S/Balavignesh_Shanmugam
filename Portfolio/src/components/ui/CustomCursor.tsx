@@ -1,59 +1,63 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [showCursor, setShowCursor] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isPointer, setIsPointer] = useState(false);
 
   useEffect(() => {
-    // Check for touch devices only once
-    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+    const isTouchDevice = 'ontouchstart' in window;
+    if (isTouchDevice) return;
 
-    if (isTouchDevice) {
-      setShowCursor(false);
-      return;
-    }
-
-    setShowCursor(true); // Desktop: show cursor
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
+      const target = e.target as HTMLElement;
+      setIsPointer(window.getComputedStyle(target).cursor === 'pointer');
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
-    return () => document.removeEventListener("mousemove", handleMouseMove);
+    const handleMouseLeave = () => setIsVisible(false);
+    const handleMouseEnter = () => setIsVisible(true);
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
+    document.addEventListener('mouseenter', handleMouseEnter);
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mouseenter', handleMouseEnter);
+    };
   }, []);
 
-  if (!showCursor) return null;
+  if (!isVisible) return null;
 
   return (
     <>
-    
-      {/* Blob Effect */}
+      {/* Outer glow ring */}
       <div
-        className="fixed pointer-events-none opacity-30 dark:opacity-30 transition-all duration-300 ease-out z-10"
+        className="fixed pointer-events-none z-[9999] rounded-full transition-all duration-300 ease-out"
         style={{
-          left: position.x - 300,
-          top: position.y - 300,
-          width: '600px',
-          height: '600px',
-          background: 'radial-gradient(circle, rgba(29, 78, 216, 0.6) 0%, rgba(29, 78, 216, 0.5) 25%, rgba(29, 78, 216, 0.3) 50%, rgba(29, 78, 216, 0.15) 75%, transparent 100%)',
-          borderRadius: '50% 40% 60% 30%',
-          filter: 'blur(60px)',
-          transform: 'scale(1.2)',
+          left: position.x - 16,
+          top: position.y - 16,
+          width: isPointer ? 40 : 32,
+          height: isPointer ? 40 : 32,
+          border: '1px solid rgba(0, 212, 255, 0.3)',
+          boxShadow: '0 0 12px rgba(0, 212, 255, 0.15)',
+          transform: `scale(${isPointer ? 1.2 : 1})`,
         }}
       />
-
-      {/* Outer Ring */}
+      {/* Inner dot */}
       <div
-        className="fixed top-0 left-0 w-16 h-16 border-2 border-blue-600 rounded-full pointer-events-none transition-all duration-150 mix-blend-difference ease-out z-50"
-        style={{ transform: `translate(${position.x - 32}px, ${position.y - 32}px)` }}
+        className="fixed pointer-events-none z-[9999] rounded-full bg-[var(--accent-cyan)]"
+        style={{
+          left: position.x - 3,
+          top: position.y - 3,
+          width: 6,
+          height: 6,
+          boxShadow: '0 0 8px rgba(0, 212, 255, 0.5)',
+        }}
       />
-
-      {/* Inner Dot */}
-      <div
-        className="fixed w-8 h-8 bg-blue-600 rounded-full pointer-events-none transition-all duration-150 mix-blend-difference ease-out z-50"
-        style={{ transform: `translate(${position.x - 16}px, ${position.y - 16}px)` }}
-      />
-
     </>
   );
 }

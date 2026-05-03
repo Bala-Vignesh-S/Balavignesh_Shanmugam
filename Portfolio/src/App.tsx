@@ -2,8 +2,6 @@ import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
-import { Services } from './components/Services';
-import { FreelanceHighlights } from './components/FreelanceHighlights';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Achievements } from './components/Achievements';
@@ -28,13 +26,11 @@ function App() {
     <>
       <LoadingScreen isLoading={isLoading} />
       {!isLoading && (
-        <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-opacity duration-500 opacity-100">
+        <div className="min-h-screen bg-[var(--bg-primary)] text-gray-100 transition-opacity duration-500 opacity-100">
           <CustomCursor />
           <Navbar />
           <Hero />
           <About />
-          <Services />
-          <FreelanceHighlights />
           <Skills />
           <Achievements />
           <Projects />

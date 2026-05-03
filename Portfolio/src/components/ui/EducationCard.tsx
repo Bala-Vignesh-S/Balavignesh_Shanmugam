@@ -1,69 +1,40 @@
-import React from "react";
-import { GraduationCap, Calendar, Award } from "lucide-react";
-import { CompanyLogo } from "./CompanyLogo";
+import React from 'react';
 
 interface EducationCardProps {
   degree: string;
   institution: string;
   period: string;
   score: string;
-  isLast: boolean;
+  logo: string;
+  index: number;
+  isLast?: boolean;
   showConnector?: boolean;
-  logo?: string;
-  index?: number; // for stagger animation
 }
 
-export function EducationCard({ 
-  degree, 
-  institution, 
-  period, 
-  score, 
-  isLast,
-  showConnector = true,
-  logo,
-  index = 0
-}: EducationCardProps) {
+export function EducationCard({ degree, institution, period, score, logo, index, isLast, showConnector }: EducationCardProps) {
   return (
-    <div className="relative group bg-white dark:bg-gray-900 p-4 sm:p-8 rounded-xl shadow-lg border border-gray-300 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400">
-      
-      <div className="relative z-10 flex items-start gap-6">
-        
-        {/* Cap Icon or Logo */}
-        <div className="rounded-lg">
-          {logo ? (
-            <CompanyLogo name={institution} imageSrc={logo} />
-          ) : (
-            <div className="p-3 sm:p-4 bg-blue-100 dark:bg-blue-900 rounded-lg">
-              <GraduationCap className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-            </div>
-          )}
-        </div>
-
-        {/* Details Section */}
-        <div className="flex-1">
-          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100">{degree}</h3>
-          <p className="text-blue-600 dark:text-blue-400 font-medium">{institution}</p>
-
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-3">
-            {/* Period */}
-            <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
-              <Calendar className="w-4 h-4" />
-              <span className="text-sm">{period}</span>
-            </div>
-
-            {/* Score */}
-            <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
-              <Award className="w-4 h-4" />
-              <span className="text-sm">Score: {score}</span>
-            </div>
+    <div className="glass-card-hover p-5 sm:p-6">
+      <div className="flex items-start gap-4 mb-3">
+        <img
+          src={logo}
+          alt={institution}
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover bg-white/5 border border-white/10 flex-shrink-0"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.style.display = 'none';
+          }}
+        />
+        <div className="flex-1 min-w-0">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-100">{degree}</h3>
+          <p className="text-sm text-[var(--accent-cyan)]">{institution}</p>
+          <div className="flex items-center gap-3 mt-1">
+            <p className="text-xs text-[var(--text-muted)]">{period}</p>
+            <span className="text-xs px-2 py-0.5 rounded-full bg-[var(--accent-cyan)]/10 border border-[var(--accent-cyan)]/20 text-[var(--accent-cyan)]">
+              {score}
+            </span>
           </div>
         </div>
       </div>
-
-      {/* Timeline Connector (Hidden for Last Card) */}
-      {showConnector && !isLast && (
-        <div className="absolute left-[38px] bottom-0 w-[2px] h-10 bg-blue-300 dark:bg-blue-700 transform translate-y-full" />
-      )}
     </div>
   );
 }

@@ -1,6 +1,5 @@
-import React from "react";
-import { Briefcase } from "lucide-react";
-import { CompanyLogo } from "./CompanyLogo";
+
+import React from 'react';
 
 interface ExperienceCardProps {
   title: string;
@@ -8,65 +7,40 @@ interface ExperienceCardProps {
   period: string;
   description: string;
   skills: string[];
-  logo?: string; // optional image path for company logo
-  index?: number; // for stagger animation
+  logo?: string;
 }
 
-export function ExperienceCard({
-  title,
-  company,
-  period,
-  description,
-  skills,
-  logo,
-  index = 0,
-}: ExperienceCardProps) {
+export function ExperienceCard({ title, company, period, description, skills, logo }: ExperienceCardProps) {
   return (
-    <div className="relative group">
-      <div className="relative bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-300 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400">
-        
-        <div className="relative z-10">
-          {/* Header */}
-          <div className="flex items-center gap-4">
-            <div className="rounded-lg">
-              {/* Render company logo if provided, otherwise fallback briefcase icon */}
-              {logo ? (
-                <CompanyLogo name={company} imageSrc={logo} />
-              ) : (
-                <div className="p-3 sm:p-4 bg-blue-100 dark:bg-blue-900 rounded-lg">
-                  <Briefcase className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                </div>
-              )}
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{title}</h3>
-              <p className="text-base text-blue-600 dark:text-blue-400">{company}</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{period}</p>
-            </div>
-          </div>
-
-          {/* Description (Custom Blue Bullets) */}
-          <ul className="mt-3 space-y-2 text-gray-700 dark:text-gray-300">
-            {description.split("\n").map((line, index) => (
-              <li key={index} className="flex items-start gap-2">
-                <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
-                <span>{line}</span>
-              </li>
-            ))}
-          </ul>
-
-          {/* Skills */}
-          <div className="mt-4 flex flex-wrap gap-2">
-            {skills.map((skill, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 text-sm font-medium bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-full"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
+    <div className="glass-card-hover p-5 sm:p-6">
+      <div className="flex items-start gap-4 mb-3">
+        {logo && (
+          <img
+            src={logo}
+            alt={company}
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover bg-white/5 border border-white/10 flex-shrink-0"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+            }}
+          />
+        )}
+        <div className="flex-1 min-w-0">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-100">{title}</h3>
+          <p className="text-sm text-[var(--accent-cyan)]">{company}</p>
+          <p className="text-xs text-[var(--text-muted)] mt-0.5">{period}</p>
         </div>
+      </div>
+      <p className="text-sm text-[var(--text-secondary)] mb-3 leading-relaxed">{description}</p>
+      <div className="flex flex-wrap gap-2">
+        {skills.map((skill) => (
+          <span
+            key={skill}
+            className="px-2.5 py-1 text-[11px] rounded-full bg-[var(--accent-cyan)]/5 border border-[var(--accent-cyan)]/15 text-[var(--accent-cyan)]/80"
+          >
+            {skill}
+          </span>
+        ))}
       </div>
     </div>
   );

@@ -1,36 +1,15 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { SectionTitle } from './ui/SectionTitle';
 import { SectionBackground } from './ui/SectionBackground';
 import { ProjectCard } from './ui/ProjectCard';
 import {
-  SiReact,
-  SiNodedotjs,
-  SiFirebase,
-  SiTailwindcss,
-  SiTypescript,
-  SiNextdotjs,
-  SiMongodb,
-  SiPrisma,
-  SiShadcnui,
-  SiFramer,
-  SiSocketdotio,
-  SiStripe,
-  SiAppwrite,
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiBootstrap,
-  SiRedux,
-  SiVite,
-  SiSupabase,
-  SiGooglegemini,
-  SiFormspree,
-  SiNetlify,
-  SiN8N,
-  SiGooglesheets,
-  SiAnthropic,
+  SiReact, SiNodedotjs, SiFirebase, SiTailwindcss, SiTypescript,
+  SiNextdotjs, SiMongodb, SiPrisma, SiShadcnui, SiFramer,
+  SiSocketdotio, SiStripe, SiAppwrite, SiHtml5, SiCss3,
+  SiJavascript, SiBootstrap, SiRedux, SiVite, SiSupabase,
+  SiGooglegemini, SiFormspree, SiNetlify, SiN8N, SiGooglesheets,
+  SiAnthropic, SiPython, SiOpencv, SiFlask, SiTensorflow, SiEthereum
 } from 'react-icons/si';
-
 import { VscJson } from "react-icons/vsc";
 
 const techStacks = {
@@ -39,12 +18,12 @@ const techStacks = {
   firebase: { icon: SiFirebase, name: "Firebase", color: '#fbbf00' },
   tailwind: { icon: SiTailwindcss, name: "Tailwind CSS", color: '#06b6d4' },
   typescript: { icon: SiTypescript, name: "TypeScript", color: '#1f6feb' },
-  next: { icon: SiNextdotjs, name: "Next.js", color: '#' },
+  next: { icon: SiNextdotjs, name: "Next.js", color: '#ffffff' },
   mongodb: { icon: SiMongodb, name: "MongoDB", color: '#10b981' },
   prisma: { icon: SiPrisma, name: "Prisma", color: '#186997' },
   shadcn: { icon: SiShadcnui, name: "ShadCN", color: '#6366f1' },
   framer: { icon: SiFramer, name: "Framer Motion", color: '#2563eb' },
-  socket: { icon: SiSocketdotio, name: "Socket.io", color: '#' },
+  socket: { icon: SiSocketdotio, name: "Socket.io", color: '#ffffff' },
   stripe: { icon: SiStripe, name: "Stripe", color: '#5b4df1' },
   appwrite: { icon: SiAppwrite, name: "Appwrite", color: '#ff3d00' },
   redux: { icon: SiRedux, name: 'Redux', color: '#764ABC' },
@@ -54,91 +33,44 @@ const techStacks = {
   formspree: { icon: SiFormspree, name: 'Formspree', color: '#e03c31' },
   netlify: { icon: SiNetlify, name: 'Netlify', color: '#00ad9f' },
   n8n: { icon: SiN8N, name: "n8n", color: '#ff6584' },
-  json: { icon: VscJson, name: "JSON" },
+  json: { icon: VscJson, name: "JSON", color: '#fbbf24' },
   sheets: { icon: SiGooglesheets, name: "Google Sheets", color: '#34a853' },
   claude: { icon: SiAnthropic, name: "Claude", color: '#d97757' },
+  python: { icon: SiPython, name: "Python", color: '#3776AB' },
+  opencv: { icon: SiOpencv, name: "OpenCV", color: '#5C3EE8' },
+  flask: { icon: SiFlask, name: "Flask", color: '#000000' },
+  tensorflow: { icon: SiTensorflow, name: "TensorFlow", color: '#FF6F00' },
+  ethereum: { icon: SiEthereum, name: "Web3/Ethereum", color: '#3C3C3D' },
 };
 
 const projects = [
   {
-    title: 'AquaWatt',
-    description: 'Track the water and electricity in each and every room. It is a Full-stack and Iot based real time product.',
-    image: '/assets/aqi.png',
-    link: 'https://aquawatt-hub.web.app/',
-    github: 'https://github.com/dineshit27/aquawatt-org',
-    techStack: [
-      techStacks.typescript,
-      techStacks.react,
-      techStacks.vite, // Added Vite icon next to React
-      techStacks.tailwind,
-      techStacks.framer, // Added Framer Motion icon next to Tailwind CSS
-      techStacks.supabase,
-      techStacks.stripe, // Added Stripe icon next to Supabase
-      techStacks.formspree, // Added Formspree icon before Firebase
-      techStacks.firebase,
-    ],
+    title: 'VORTUX AI — Football Match Analysis Platform',
+    description: 'Built a full-stack AI-powered VAR system using custom YOLO models for player detection, ball tracking, foul recognition, and offside analysis. Includes a team analytics dashboard with heatmaps.',
+    image: '/assets/aqi.png', // Using existing placeholder
+    github: 'https://github.com/Bala-Vignesh-S',
+    techStack: [techStacks.python, techStacks.opencv, techStacks.flask, techStacks.react, techStacks.tailwind],
   },
   {
-    title: 'NeuroScan AI',
-    description: 'AI powered Human Brain Tumor Detector. It is a Full Stack and AI based real time product.',
-    image: '/assets/neu.png',
-    link: 'https://neuroscan-aio.web.app/',
-    github: 'https://github.com/dineshit27/NeuroScan-AI',
-    techStack: [
-      techStacks.typescript,
-      techStacks.react,
-      techStacks.vite, // Added Vite icon next to React
-      techStacks.tailwind,
-      techStacks.framer, // Added Framer Motion icon next to Tailwind CSS
-      techStacks.supabase,
-      techStacks.stripe, // Added Stripe icon next to Supabase
-      techStacks.formspree, // Added Formspree icon before Firebase
-      techStacks.firebase,
-      techStacks.gemini, // Added Google Gemini icon at last
-    ],
+    title: 'LifeGuard AI — Elderly Care App',
+    description: 'Developed a cross-platform mobile app for elderly care with on-device ML and cloud-based AI integration. Implemented real-time fall detection using TensorFlow Lite with automated emergency alerts via Twilio.',
+    image: '/assets/neu.png', // Using existing placeholder
+    github: 'https://github.com/Bala-Vignesh-S',
+    techStack: [techStacks.typescript, techStacks.tensorflow, techStacks.gemini, techStacks.react],
   },
   {
-    title: 'MR Builders Portfolio',
-    description: ' My first freelance project, delivering a luxury, responsive, and professional web presence.',
-    image: '/assets/_con.png',
-    link: 'https://mr-builder-world.web.app/',
-    github: 'https://github.com/dineshit27/MR-Builder-Business-Site',
-    techStack: [
-      techStacks.typescript,
-      techStacks.react,
-      techStacks.vite,
-      techStacks.tailwind,
-      techStacks.redux,
-      techStacks.formspree, // Added Formspree icon
-      techStacks.netlify, // Added Netlify icon
-    ],
+    title: 'GOAT Wallet Agent',
+    description: 'Engineered an autonomous blockchain AI agent for fund management using real-time market and on-chain signals. Integrated a Telegram bot interface for natural language control.',
+    image: '/assets/_con.png', // Using existing placeholder
+    github: 'https://github.com/Bala-Vignesh-S',
+    techStack: [techStacks.python, techStacks.ethereum, techStacks.node],
   },
   {
-    title: 'MaxGroo Hub Site',
-    description: 'It showcases my role in designing and developing a modern, responsive, and user-focused digital platform.',
-    image: '/assets/mgv.png',
-    link: 'https://maxgroo-hub.web.app/',
-    techStack: [
-      techStacks.typescript,
-      techStacks.react,
-      techStacks.vite, // Added Vite icon next to React
-      techStacks.tailwind,
-      techStacks.framer,
-      techStacks.firebase,
-    ],
-  },
-  {
-    title: 'Data Analyst AI Agent',
-    description: 'Built a smart Data Analyst AI Agent using n8n that automates data collection, analysis, and actionable insights.',
-    image: '/assets/n8n.png',
-    github: 'https://github.com/dineshit27',
-    techStack: [
-      techStacks.n8n,
-      techStacks.json,
-      techStacks.gemini,
-      techStacks.sheets,
-      techStacks.claude,
-    ],
+    title: 'PurePath AI',
+    description: 'Built a multi-agent system using LangChain to predict water scarcity risks in rural communities. Designed specialized agents for risk prediction and stakeholder mapping.',
+    image: '/assets/mgv.png', // Using existing placeholder
+    github: 'https://github.com/Bala-Vignesh-S',
+    techStack: [techStacks.python, techStacks.gemini, techStacks.json],
   },
 ];
 
@@ -154,7 +86,6 @@ export function Projects() {
               <ProjectCard key={project.title} index={index} {...project} />
             ))}
           </div>
-
         </div>
       </section>
     </SectionBackground>

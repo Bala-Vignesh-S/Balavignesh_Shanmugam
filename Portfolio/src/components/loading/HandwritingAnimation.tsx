@@ -18,40 +18,32 @@ export default function HandwritingAnimation() {
   }, [controls]);
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
-      {/* Importing Dancing Script font */}
+    <div className="w-full min-h-screen flex items-center justify-center bg-[#000000]">
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
-          /* Responsive font sizing for SVG text */
           .handwriting-text {
             font-family: 'Dancing Script', cursive;
             font-size: 90px;
           }
-
           @media (min-width: 768px) {
-            .handwriting-text {
-              font-size: 130px;
-            }
+            .handwriting-text { font-size: 130px; }
           }
-
           @media (min-width: 1024px) {
-            .handwriting-text {
-              font-size: 160px;
-            }
+            .handwriting-text { font-size: 160px; }
           }
         `}
       </style>
 
-      <svg
-        viewBox="0 0 1000 250"
-        className="w-full max-w-5xl h-auto"
-        aria-label={name}
-      >
+      <svg viewBox="0 0 1000 250" className="w-full max-w-5xl h-auto" aria-label={name}>
         <defs>
+          <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#FFD700" />
+            <stop offset="50%" stopColor="#3b82f6" />
+            <stop offset="100%" stopColor="#8b5cf6" />
+          </linearGradient>
           <clipPath id="clip-path-draw">
-            <motion.rect 
+            <motion.rect
               x="0" y="0" width="1000" height="250"
               initial={{ width: 0 }}
               animate={{ width: 1000 }}
@@ -59,17 +51,13 @@ export default function HandwritingAnimation() {
             />
           </clipPath>
         </defs>
-
         <motion.text
-          x="50%"
-          y="50%"
-          dy="30px"
-          textAnchor="middle"
-          className="handwriting-text text-blue-600 dark:text-blue-400"
+          x="50%" y="50%" dy="30px" textAnchor="middle"
+          className="handwriting-text"
           clipPath="url(#clip-path-draw)"
-          stroke="currentColor"
+          stroke="url(#textGradient)"
           strokeWidth="1.5"
-          fill="currentColor"
+          fill="url(#textGradient)"
           initial={{ fillOpacity: 0 }}
           animate={controls}
         >
@@ -79,5 +67,3 @@ export default function HandwritingAnimation() {
     </div>
   );
 }
-
-

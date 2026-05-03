@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SectionTitle } from "./ui/SectionTitle";
 import { SectionBackground } from "./ui/SectionBackground";
 import { LogoLoop, LogoItem } from "./ui/LogoLoop";
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiRedux, SiGit, SiGithub, SiVercel, SiBootstrap, SiMysql, SiMongodb, SiCanva, SiFigma, SiTailwindcss, SiSupabase, SiArduino, SiN8N, SiGoogleanalytics, SiMeta, SiNotion } from "react-icons/si";
+import { SiHtml5, SiCss3, SiJavascript, SiReact, SiPython, SiPytorch, SiTensorflow, SiOpencv, SiEthereum, SiSolidity, SiDocker, SiAmazonwebservices, SiPostgresql, SiFlask, SiGit, SiGithub, SiVercel, SiMysql, SiMongodb, SiJupyter, SiPostman } from "react-icons/si";
 import { FaNodeJs, FaPython, FaJava, FaMicrosoft } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import { IoLogoFirebase } from "react-icons/io5";
 import { BiBrain } from "react-icons/bi";
-import { Heart, FlaskConical } from "lucide-react";
+import { FlaskConical } from "lucide-react";
 import type { IconType } from "react-icons";
 import type { LucideIcon } from "lucide-react";
 
@@ -30,41 +30,29 @@ const skillCategories: SkillCategory[] = [
   {
     name: "Tech Stack",
     items: [
-      { name: "HTML", icon: SiHtml5, color: "#e34f26", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-      { name: "CSS", icon: SiCss3, color: "#1572b6", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-      { name: "JavaScript", icon: SiJavascript, color: "#ffd600", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-      { name: "Java", icon: FaJava, color: "#f7b731", url: "https://www.java.com/" },
-      { name: "Python", icon: FaPython, color: "#306998", url: "https://www.python.org/" },
+      { name: "Python", icon: SiPython, color: "#3776AB", url: "https://www.python.org/" },
+      { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C", url: "https://pytorch.org/" },
+      { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00", url: "https://www.tensorflow.org/" },
+      { name: "OpenCV", icon: SiOpencv, color: "#5C3EE8", url: "https://opencv.org/" },
+      { name: "Solidity", icon: SiSolidity, color: "#363636", url: "https://soliditylang.org/" },
+      { name: "Ethereum", icon: SiEthereum, color: "#3C3C3D", url: "https://ethereum.org/" },
+      { name: "Flask", icon: SiFlask, color: "#000000", url: "https://flask.palletsprojects.com/" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1", url: "https://www.postgresql.org/" },
+      { name: "AWS", icon: SiAmazonwebservices, color: "#232F3E", url: "https://aws.amazon.com/" },
+      { name: "Docker", icon: SiDocker, color: "#2496ED", url: "https://www.docker.com/" },
       { name: "React", icon: SiReact, color: "#61dafb", url: "https://react.dev/" },
-      { name: "React Redux", icon: SiRedux, color: "#764abc", url: "https://react-redux.js.org/" },
-      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06b6d4", url: "https://tailwindcss.com/" },
-      { name: "Bootstrap", icon: SiBootstrap, color: "#7952b3", url: "https://getbootstrap.com/" },
-      { name: "Node.js", icon: FaNodeJs, color: "#68a063", url: "https://nodejs.org/" },
-      { name: "MySQL", icon: SiMysql, color: "#4479a1", url: "https://www.mysql.com/" },
-      { name: "MongoDB", icon: SiMongodb, color: "#13aa52", url: "https://www.mongodb.com/" },
-      { name: "Firebase", icon: IoLogoFirebase, color: "#ffca28", url: "https://firebase.google.com/" },
-      { name: "Supabase", icon: SiSupabase, color: "#3ECF8E", url: "https://supabase.com/" },
-      { name: "Vercel", icon: SiVercel, url: "https://vercel.com/" },
+      { name: "TypeScript", icon: SiJavascript, color: "#3178c6", url: "https://www.typescriptlang.org/" },
     ],
   },
   {
     name: "Tools",
     items: [
-      { name: "n8n", icon: SiN8N, color: "#F05A2A", url: "https://n8n.io/" },
       { name: "Git", icon: SiGit, color: "#f34f29", url: "https://git-scm.com/" },
       { name: "GitHub", icon: SiGithub, url: "https://github.com/" },
-      { name: "Lovable.dev", icon: Heart, color: "#ff6b9d", url: "https://lovable.dev/" },
-      { name: "Stitch AI", icon: FlaskConical, color: "#ec4899", url: "https://stitch.tech/" },
-      { name: "MS Excel", icon: FaMicrosoft, color: "#217346", url: "https://www.microsoft.com/en-us/microsoft-365/excel" },
       { name: "VS Code", icon: VscVscode, color: "#007acc", url: "https://code.visualstudio.com/" },
+      { name: "Jupyter", icon: SiJupyter, color: "#F37626", url: "https://jupyter.org/" },
+      { name: "Postman", icon: SiPostman, color: "#FF6C37", url: "https://www.postman.com/" },
       { name: "Cursor IDE", icon: BiBrain, color: "#00d4aa", url: "https://cursor.sh/" },
-      { name: "Arduino IDE", icon: SiArduino, color: "#00979D", url: "https://www.arduino.cc/en/software" },
-      { name: "Canva", icon: SiCanva, color: "#00c4cc", url: "https://www.canva.com/" },
-      { name: "Affinity", imageSrc: "/assets/affinity.svg", color: "#1B72BE", url: "https://affinity.serif.com/en-us/designer/" },
-      { name: "Figma", icon: SiFigma, color: "#f24e1e", url: "https://www.figma.com/" },
-      { name: "Analytics", icon: SiGoogleanalytics, color: "#e37400", url: "https://analytics.google.com/" },
-      { name: "Meta Ads", icon: SiMeta, color: "#0668E1", url: "https://www.facebook.com/business/ads" },
-      { name: "Notion AI", icon: SiNotion, url: "https://www.notion.so/" },
     ],
   },
 ];
@@ -97,7 +85,7 @@ export function Skills() {
             title: skill.name,
             ariaLabel: `${skill.name} documentation`,
             node: (
-              <span className="inline-flex items-center gap-2.5 px-1 py-1 text-[17px] font-semibold text-gray-800 transition-colors duration-300 dark:text-gray-100">
+              <span className="inline-flex items-center gap-2.5 px-1 py-1 text-[17px] font-semibold text-gray-100 transition-colors duration-300">
                 <span
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full"
                   style={{ backgroundColor: `${skill.color ?? "#3b82f6"}1A` }}
@@ -105,7 +93,7 @@ export function Skills() {
                   {skill.imageSrc ? (
                     <img src={skill.imageSrc} alt={skill.name} className="h-6 w-6 object-contain" loading="lazy" />
                   ) : Icon ? (
-                    <Icon size={22} color={skill.color} className={!skill.color ? "text-blue-600 dark:text-blue-300" : undefined} />
+                    <Icon size={22} color={skill.color} className={!skill.color ? "text-[var(--accent-cyan)]" : undefined} />
                   ) : null}
                 </span>
                 <span className="whitespace-nowrap">{skill.name}</span>
@@ -121,7 +109,7 @@ export function Skills() {
     <SectionBackground>
       <section id="skills">
         <div className="container mx-auto px-6">
-          <SectionTitle subtitle="A modern tech stack designed for impact, efficiency, and scale 📈">Skills</SectionTitle>
+          <SectionTitle subtitle="A modern tech stack designed for impact, efficiency, and scale ðŸ“ˆ">Skills</SectionTitle>
 
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {filterOptions.map((option) => (
@@ -132,8 +120,8 @@ export function Skills() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${activeFilter === option.value
-                    ? "border-blue-500 bg-blue-500 text-white shadow-lg"
-                    : "border-gray-300 text-gray-700 hover:border-blue-400 hover:text-blue-500 dark:border-gray-700 dark:text-gray-300"
+                    ? "border-[var(--accent-cyan)]/50 bg-[var(--accent-cyan)] text-[#000000] shadow-lg shadow-[var(--accent-cyan)]/20"
+                    : "border-white/10 text-[var(--text-secondary)] hover:border-[var(--accent-cyan)]/30 hover:text-[var(--accent-cyan)] bg-white/5"
                   }`}
               >
                 {option.label}

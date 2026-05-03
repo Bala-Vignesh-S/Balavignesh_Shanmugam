@@ -5,25 +5,11 @@ import { ScrollTimeline, type TimelineEvent } from './ui/ScrollTimeline';
 
 const education = [
   {
-    degree: 'B.Tech in Information Technology',
-    institution: 'Sri Sairam Institution of Technology, Chennai',
+    degree: 'B.Tech in Artificial Intelligence & Data Science',
+    institution: 'Sri Sairam Engineering College, Chennai',
     period: '2023 - 2027',
-    score: '78%',
-    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl0slFCxtSvrL4phitUZ5EA_pD7P6UHEuxPQ&s',
-  },
-  {
-    degree: 'Senior Secondary (XII)',
-    institution: 'St.Mary Matriculation Higher Secondary School',
-    period: '2022 - 2023',
-    score: '74%',
-    logo: 'https://stmarysch21.com/wp-content/uploads/2023/08/stmarys-logo.png',
-  },
-  {
-    degree: 'Secondary (X)',
-    institution: "New Prince Matriculation Higher Secondary School",
-    period: '2020 - 2021',
-    score: '100%',
-    logo: 'assets/group.png',
+    score: '8.4 / 10.0 CGPA',
+    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl0slFCxtSvrL4phitUZ5EA_pD7P6UHEuxPQ&s', // Using existing logo as placeholder
   },
 ];
 

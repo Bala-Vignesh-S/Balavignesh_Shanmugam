@@ -13,7 +13,7 @@ function FooterLink({ href, children }: FooterLinkProps) {
   return (
     <Link
       href={href}
-      className="text-gray-500 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
+      className="text-[var(--text-muted)] hover:text-[var(--accent-cyan)] transition-colors"
     >
       {children}
     </Link>
@@ -38,8 +38,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-gray-50 via-slate-100/80 to-blue-50/60 dark:from-black dark:via-gray-950/80 dark:to-slate-950/60 border-t border-gray-200 dark:border-gray-800">
-      
+    <footer className="relative bg-[var(--bg-primary)] border-t border-white/5">
       <div className="container mx-auto px-6 py-8 relative">
         <div className="flex flex-col items-center gap-6">
           {/* Navigation Links */}
@@ -55,14 +54,13 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="text-sm text-gray-500 dark:text-gray-400 text-center">
-            <p>© {currentYear} M Dinesh. All rights reserved.</p>
-            <p className="flex items-center justify-center gap-2">
-              Built with <FaReact className="w-6 h-6 text-blue-500 animate-spin" /> using
-              <SiVite className="w-6 h-6 text-yellow-500 animate-pulse" />
+          <div className="text-sm text-[var(--text-muted)] text-center">
+            <p>© {currentYear} Balavignesh Shanmugam. All rights reserved.</p>
+            <p className="flex items-center justify-center gap-2 mt-1">
+              Built with <FaReact className="w-5 h-5 text-[var(--accent-cyan)] animate-spin" style={{ animationDuration: '3s' }} /> using
+              <SiVite className="w-5 h-5 text-purple-400 animate-pulse" />
             </p>
           </div>
-
         </div>
       </div>
     </footer>
