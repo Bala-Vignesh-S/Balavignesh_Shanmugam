@@ -68,7 +68,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-cyan)]/10 to-[var(--accent-purple)]/10 rounded-full blur-3xl animate-pulse" />
             <img
               src={isHovering ? '/assets/profilegif.gif' : '/assets/pp.png'}
-              alt="M Dinesh"
+              alt="Balavignesh Shanmugam"
               className="relative w-full max-w-lg mx-auto rounded-full shadow-2xl shadow-[var(--accent-cyan)]/10 transform hover:scale-105 transition-transform duration-500 ring-2 ring-[var(--accent-cyan)]/20"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}

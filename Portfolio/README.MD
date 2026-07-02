@@ -1,8 +1,8 @@
-# M Dinesh - Portfolio Website for a Full Stack Developer
+# Balavignesh Shanmugam - Portfolio Website
 
-Welcome to **My Portfolio**! This is my personal portfolio for showcasing my skills, projects, experience, education, certifications, and more. It’s built using React, TypeScript, Tailwind CSS, and other modern web technologies. It fetches data from various APIs to display the latest information, such as GitHub repositories, LeetCode submissions, and blogs. The portfolio is responsive, interactive, and optimized for performance.
+Welcome to **My Portfolio**! This is my personal portfolio for showcasing my skills, projects, experience, education, certifications, and more. It's built using React, TypeScript, Tailwind CSS, and other modern web technologies. It fetches data from various APIs to display the latest information, such as GitHub repositories, LeetCode submissions, and blogs. The portfolio is responsive, interactive, and optimized for performance.
 
-Check it out live at: [https://m-dinesh-30.web.app/](https://m-dinesh-30.web.app/)
+Check it out live at: [https://balavignesh.dev/](https://balavignesh.dev/)
 
 ---
 
@@ -34,7 +34,7 @@ Check it out live at: [https://m-dinesh-30.web.app/](https://m-dinesh-30.web.app
 
 ## 📂 **Directory Structure**
 ```
-└── dinesh-portfolio/
+└── balavignesh-portfolio/
     ├── README.MD
     ├── LICENSE
     ├── eslint.config.js
@@ -129,10 +129,11 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 
 Feel free to reach out to me through any of the following channels:
 
-- **Email**: [m.dinesh.it27@gmail.com](mailto:m.dinesh.it27@gmail.com)
-- **LinkedIn**: [linkedin.com/m-dinesh-d30](linkedin.com/m-dinesh-d30)
-- **Website**: [m-dinesh-30.web.app](https://m-dinesh-30.web.app/)
+- **Email**: [balavignesh.ai@gmail.com](mailto:balavignesh.ai@gmail.com)
+- **GitHub**: [github.com/bala-vignesh-S](https://github.com/bala-vignesh-S)
+- **LeetCode**: [leetcode.com/balavignesh_Shanmugam](https://leetcode.com/balavignesh_Shanmugam)
+- **Website**: [balavignesh.dev](https://balavignesh.dev/)
 
 ---
 
-### 🔥 Made with ❤️ by **M Dinesh**
+### 🔥 Made with ❤️ by **Balavignesh Shanmugam**

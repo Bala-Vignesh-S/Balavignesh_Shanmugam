@@ -33,7 +33,7 @@ const achievements: AchievementItem[] = [
 ];
 
 function AchievementFlipCard({ achievement, index }: { achievement: AchievementItem; index: number }) {
-  const defaultProofLink = "https://www.linkedin.com/in/m-dinesh-d30/details/honors/";
+  const defaultProofLink = "https://www.linkedin.com/in/balavignesh-shanmugam/details/honors/";
   const hasProof = achievement.link && achievement.link !== "#";
 
   return (
